@@ -52,19 +52,23 @@ require("config.lazy")
 require("plugins.autopairs")
 -- require("oil").setup()
 require("oil")
--- NvimTree
-require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
+-- -- NvimTree
+-- require("nvim-tree").setup({
+--   sort = {
+--     sorter = "case_sensitive",
+--   },
+--   view = {
+--     width = 30,
+--   },
+--   renderer = {
+--     group_empty = true,
+--   },
+--   filters = {
+--     dotfiles = true,
+--   },
+-- })
 require("lazygit")
+require("lazy").setup({
+  {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"}
+})
+require('mappings')
